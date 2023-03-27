@@ -1,0 +1,41 @@
+﻿<Window x:Class="MatchingTiles.SignIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MatchingTiles"
+        Title="Sign In" FontFamily="Helvetica" Height="450" Width="800" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <local:UserData/>
+    </Window.DataContext>
+
+    <Window.Icon>
+        <BitmapImage UriSource="/Resources/memorytiles.ico" />
+    </Window.Icon>
+
+    <Grid>
+
+        <TextBlock Text="Welcome to Matching Tiles!" FontSize="24" FontFamily="Helvetica" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,361"/>
+
+        <ListBox Name="UsersListBox" ItemsSource="{Binding Users}" SelectionChanged="UsersListBoxSelectionChange" Margin="136,54,480,171">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=Username}" FontFamily="Helvetica"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Image Name="UserAvatar" HorizontalAlignment="Left" Height="209" Margin="480,54,0,0" VerticalAlignment="Top" Width="198" RenderOptions.BitmapScalingMode="Fant" Stretch="Fill"/>
+
+        <Button Content="New User" FontSize="15" FontFamily="Helvetica" HorizontalAlignment="Left" Width="110" Margin="173,293,0,0" VerticalAlignment="Top" Click="OnNewUserButtonClick"/>
+
+        <Button x:Name="DeleteUserButton" Content="Delete User" FontSize="15" FontFamily="Helvetica" HorizontalAlignment="Left" Width="110" Margin="173,345,0,0" VerticalAlignment="Top" Click="OnDeleteUserButtonClick" IsEnabled="False"/>
+
+        <Button x:Name="PlayGameButton" Content="Play Game" FontSize="15" FontFamily="Helvetica" HorizontalAlignment="Left" Width="110" Margin="524,293,0,0" VerticalAlignment="Top" Click="OnPlayGameButtonClick" IsEnabled="False"/>
+
+        <Button Content="Exit Game" FontSize="15" FontFamily="Helvetica" HorizontalAlignment="Left" Width="110" Margin="524,345,0,0" VerticalAlignment="Top" Click="OnExitGameButtonClick"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="209" Margin="480,54,0,0" Stroke ="Gray" VerticalAlignment="Top" Width="198"/>
+
+    </Grid>
+
+</Window>
