@@ -8,6 +8,6 @@
     </Window.Icon>
 
     <Grid>
-        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Dan Ionuț-Georgian, 10LF311, IA"/>
+        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Text="dan-unitbv"/>
     </Grid>
 </Window>
